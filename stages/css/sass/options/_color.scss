@@ -5,7 +5,7 @@ $themes: (green-theme: (color: #27ae60),
 $map in $themes {
     .#{$theme} {
         .classname {
-            color: map-get($map, $color);
+            color: map-get($map, color);
         }
     }
 }

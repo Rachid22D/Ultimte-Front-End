@@ -6,12 +6,8 @@ $(function () {
 
     //Toggle Submenu
     $('.toggle-submenu').on('click', function () {
-        $(this)
-            .find('.fa-angle-right')
-            .toggleClass('down');
-        $(this)
-            .next('.child-links')
-            .slideToggle();
+        $(this).find('.fa-angle-right').toggleClass('down');
+        $(this).next('.child-links').slideToggle();
     });
 
     // Open / Close Fullscreen
@@ -26,12 +22,8 @@ $(function () {
 
     // Toggle Settings
     $('.toggle-settings').on('click', function () {
-        $(this)
-            .find('i')
-            .toggleClass('fa-spin');
-        $(this)
-            .parent()
-            .toggleClass('hide-settings');
+        $(this).find('i').toggleClass('fa-spin');
+        $(this).parent().toggleClass('hide-settings');
     });
 
     // Switch Color Themes
@@ -41,14 +33,24 @@ $(function () {
             themesClasses.push($(this).data("theme"));
         });
     $('.color-options li').on("click", function () {
-        $(this)
-            .addClass("active")
-            .siblings()
-            .removeClass("active");
+        $(this).addClass("active").siblings().removeClass("active");
         $("body")
             .removeClass(themesClasses.join(" "))
             .addClass($(this).data("theme"));
     });
+
+    // Switch Font Options
+    var fontClasses = [];
+    $(".font-options select option")
+        .each(function () {
+            fontClasses.push($(this).val());
+        });
+    $(".font-options select").on("change", function () {
+        $("body").removeClass(fontClasses.join(" "))
+            .addClass($(this).find("option:selected").val());
+    });
+
+
 });
 
 

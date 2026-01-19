@@ -20,7 +20,7 @@
     "minify": "^5.1.0"
   },
   "dependencies": {
-    "gulp-pug": "^4.0.1",
+    "gulp-pug": "^5.0.0",
     "static-server": "^2.2.1"
   },
   "browserslist": [
